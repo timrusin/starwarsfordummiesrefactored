@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../css/CharacterCard.css'
 import { Container, Spinner } from "reactstrap";
-import { Link } from "react-router-dom";
 
 
 const Characters = ()=>{
@@ -24,10 +23,10 @@ const Characters = ()=>{
       return (
         <div className="spinner">
           <Container>
-          <Spinner color="warning" type="border"></Spinner>
+            <Spinner color="warning" type="border"></Spinner>
           </Container>
         </div>
-        )
+      );
     }
    
     const charactersArray = characters.results
