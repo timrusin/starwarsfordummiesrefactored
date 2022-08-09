@@ -1,0 +1,30 @@
+.nav-bar{
+    position: sticky;
+    top:0px;
+    height: auto;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
+.swapi{
+    font-size:.75em;
+}
+
+.dummies{
+    font-family:Impact,'Arial Narrow Bold', sans-serif;
+    font-size: .75em;
+    margin-right: 25px;
+}
+
+.star-wars{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    margin-left:2%;
+    margin-right:5px;  
+}
+
+.menu{
+    background-color: rgba(167, 167, 167, 0.892);
+    border-radius: 10%;
+    width: 10px;
+}

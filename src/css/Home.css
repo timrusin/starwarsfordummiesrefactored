@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+body{
+    overflow: hidden;
+    background-color:black;
+    color: rgba(233, 226, 19, 0.899);
+    background-image:url('../images/starbackground.jpeg');
+}
+ 
+.wrapper{
+    display: flex;
+    perspective: 800px;
+    height: 100%;
+    width: 88%;
+    margin: 450px auto;
+    padding-top:200px;
+}
+
+.crawl{
+    margin: 50% 0 0 0;
+    font-size:2em;
+    font-family: 'Roboto Mono';
+    line-height: 1.5em;
+    font-weight: bold; 
+    text-align: justify;
+    position: absolute;
+    animation: scroll 90s linear infinite;
+}
+
+@keyframes scroll {
+    from {top: 0px; transform: translateZ(0) rotateX(20deg) }
+    to {top:-6000px; transform: translateZ(-1000px) rotateX(30deg)}
+} 
+
+.crawl-sections{
+    padding-bottom: 60px;
+}
+
+.opening-title{
+    text-align: center;
+    font-size: 3em;
+}
+
+@media only screen and (max-width: 600px){
+    .opening-title{
+        font-size: 1.75em;
+    }
+    .crawl{
+        font-size: 1em;
+    }
+    
+}
+
+.opening-subtitle{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
