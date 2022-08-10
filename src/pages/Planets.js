@@ -20,7 +20,7 @@ const Planets = ()=>{
        fetch(`https://swapi.dev/api/planets/?page=${page}`)
        .then((res)=>res.json())
        .then((json)=>setPlanets(json))
-       setTimeout(stopLoading, 1000)
+       setTimeout(stopLoading, 1500)
    },[page])
 
    const stopLoading = () =>{
@@ -28,7 +28,7 @@ const Planets = ()=>{
    }
    if(!planets || isloading) {
     return (
-      <div id="spinner">
+      <div className="spinner">
         <Spinner color="warning" type="border"></Spinner>
       </div>
       )

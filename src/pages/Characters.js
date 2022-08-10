@@ -20,7 +20,7 @@ const Characters = ()=>{
         fetch(`https://swapi.dev/api/people/?page=${page}`)
         .then((res)=>res.json())
         .then((json)=>setCharacters(json))
-        setTimeout(stopLoading, 1000)
+        setTimeout(stopLoading, 1500)
     },[page])
  
     const stopLoading = () =>{
@@ -29,9 +29,7 @@ const Characters = ()=>{
     if(!characters || isloading) {
       return (
         <div className="spinner">
-          <Container>
             <Spinner color="warning" type="border"></Spinner>
-          </Container>
         </div>
       );
     }
