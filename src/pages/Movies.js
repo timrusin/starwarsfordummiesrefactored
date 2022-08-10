@@ -14,10 +14,10 @@ const Movies = ()=>{
     },[])
     if(!movies){
         return (
-            <Container>
+          <div className="spinner">
             <Spinner color="warning" type="border"></Spinner>
-            </Container>
-        )
+          </div>
+        );
     }
     const moviesArray = movies.results
     console.log(moviesArray);
