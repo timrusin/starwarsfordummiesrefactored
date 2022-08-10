@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../css/CharacterCard.css'
 import { Container, Spinner } from "reactstrap";
-import { unmountComponentAtNode } from "react-dom";
-
 
 const Characters = ()=>{
    const [characters, setCharacters]= useState()
