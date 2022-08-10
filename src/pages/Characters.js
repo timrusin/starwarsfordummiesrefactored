@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from "react";
 import '../css/CharacterCard.css'
 import { Container, Spinner } from "reactstrap";
+import { unmountComponentAtNode } from "react-dom";
 
 
 const Characters = ()=>{
    const [characters, setCharacters]= useState()
    const [page, setPage] = useState(1)
+   const [isloading, setIsloading] = useState(false)
 
    const pageUp = ()=>{
-     return (page === 8 ? setPage(8) : setPage(page+1))
+    setIsloading(true)
+     page === 8 ? setPage(8) : setPage(page+1)
    }
    const pageDown = ()=>{
-     return (page === 1 ? setPage(1) : setPage(page-1))
+    setIsloading(true)
+     page === 1 ? setPage(1) : setPage(page-1)
    }
 
      useEffect(()=> {
         fetch(`https://swapi.dev/api/people/?page=${page}`)
         .then((res)=>res.json())
         .then((json)=>setCharacters(json))
+        .then(setIsloading(false))
     },[page])
-    if(!characters) {
+    if(!characters || isloading) {
       return (
         <div className="spinner">
           <Container>
@@ -30,7 +35,7 @@ const Characters = ()=>{
     }
    
     const charactersArray = characters.results
-    
+
     return(
     <Container>
         <div className="button-holder">

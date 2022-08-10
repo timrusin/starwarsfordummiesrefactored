@@ -5,20 +5,24 @@ import { Container,  Spinner } from "reactstrap";
 const Planets = ()=>{
     const [planets, setPlanets]= useState()
     const [page, setPage] = useState(1)
+    const [isloading, setIsloading] = useState(false)
 
     const pageUp = ()=>{
-      return (page === 6 ? setPage(6) : setPage(page+1))
+        setIsloading(true)
+        page === 6 ? setPage(6) : setPage(page+1)
     }
     const pageDown = ()=>{
-      return (page === 1 ? setPage(1) : setPage(page-1))
+        setIsloading(true)
+        page === 1 ? setPage(1) : setPage(page-1)
     }
 
     useEffect(()=> {
        fetch(`https://swapi.dev/api/planets/?page=${page}`)
        .then((res)=>res.json())
        .then((json)=>setPlanets(json))
+       .then(setIsloading(false))
    },[page])
-   if(!planets) {
+   if(!planets || isloading) {
     return (
       <div id="spinner">
         <Spinner color="warning" type="border"></Spinner>
